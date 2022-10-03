@@ -6,7 +6,7 @@
 # The point is that this closest greater digit will always be the first digit greater than the 'newly considered digit' encountered when looping over the sublist from the right. 
 
 
-def is_highest_configuration(input_list):
+def is_highest_configuration(input_list: list) -> bool:
 
   """
   Helper function to check if the given input permutation is the highest possible one.
@@ -23,7 +23,7 @@ def is_highest_configuration(input_list):
   return input_list == sorted(input_list, reverse = True)
 
 
-def generate_next_higher_configuration(input_list):
+def generate_next_higher_configuration(input_list: list) -> list:
 
   """
   Helper function to generate the next higher configuration of the given digits.
@@ -52,7 +52,7 @@ def generate_next_higher_configuration(input_list):
       return [element] + sorted(input_list)
 
 
-def solver(input_list):
+def solver(input_list: list) -> list:
 
   """
   Main solver function for the problem at hand.
