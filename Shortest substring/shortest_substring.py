@@ -165,6 +165,7 @@ def solver(input_string: str, characters_set: set) -> str:
         if shortest_distance == len(characters_set):
           break
 
+  # Return the sliced input_string based on the boundaries of the shortest substring.
   return input_string[boundaries_of_shortest_substring[0]: boundaries_of_shortest_substring[1]+1]
 
 # Test the solution.
