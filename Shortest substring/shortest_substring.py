@@ -154,16 +154,15 @@ def solver(input_string: str, characters_set: set) -> str:
     else:
       new_shortest_distance = new_boundaries_of_shortest_substring[1] - new_boundaries_of_shortest_substring[0]
 
-      # Check if the length of the new substring is less than the last shortest length recorded.
-      # If so, set the shortest distance to be the newly calculated one, and set the boundaries of the shortest substring to be newly obtained ones.
-      if new_shortest_distance < shortest_distance:
-        shortest_distance = new_shortest_distance
-        boundaries_of_shortest_substring = new_boundaries_of_shortest_substring
+      # Since we are in the else statement, we know the new substring is shorter than the previously recorded length.
+      # Thus, we set the shortest distance to be the newly calculated one, and set the boundaries of the shortest substring to be newly obtained ones.
+      shortest_distance = new_shortest_distance
+      boundaries_of_shortest_substring = new_boundaries_of_shortest_substring
 
-        # If the length of the shortest substring has the same number of characters as the characters_set, it means that we cannot generate a shorter substring containing all the required characters.
-        # In that case, we stop the execution, and proceed to output the given substring.
-        if shortest_distance == len(characters_set):
-          break
+      # If the shortest substring has the same number of characters as the characters_set, it means that we cannot generate a shorter substring containing all the required characters.
+      # In that case, we stop the execution, and proceed to output the given substring.
+      if shortest_distance == len(characters_set) - 1:
+        break
 
   # Return the sliced input_string based on the boundaries of the shortest substring.
   return input_string[boundaries_of_shortest_substring[0]: boundaries_of_shortest_substring[1]+1]
