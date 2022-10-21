@@ -1,4 +1,6 @@
-This problem is the same as the one given by Daily Coding Problem number 103.
+This problem is the same as the one given by Daily Coding Problem number 103 [Medium].
+
+I find this problem quite challenging and fun. I recommend it to people that have good experience with coding challenges.
 
 I slightly modified the return of the function in case no substring containing all the characters can be constructed, but is equivalent to the original requirements of the problem.
 
