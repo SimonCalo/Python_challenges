@@ -48,6 +48,9 @@ def construct_all_valid_IPs(input_digits: str, n_to_find: int= 4) -> list:
 
   # Loop over all possible lenghts of the first subunit.
     for i in range(1, max_range):
+        # Initialise to None to avoid condition value 
+        # carried over from previous loops.
+        condition = None
         first_number: str = input_digits[0:i] # Construct the first subunit.
     # If the subunit is valid, proceed with the following ones.
         if check_validity_of_one(first_number):
